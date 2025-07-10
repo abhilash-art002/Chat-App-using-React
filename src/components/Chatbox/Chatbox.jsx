@@ -58,7 +58,13 @@ const Chatbox = ({ selectedUser }) => {
   return (
     <div className='chat-box'>
       <div className="chat-user">
-        <img src={assets.profile_img} alt="" />
+        <img
+  src={selectedUser?.profile_image
+    ? `http://localhost:5000/uploads/${selectedUser.profile_image}`
+    : assets.profile_img}
+  alt="user"
+/>
+
         <p>{selectedUser?.username || "Select a user"} <img className="dot" src={assets.green_dot} alt="" /></p>
         <img src={assets.help_icon} className='help' alt="" />
       </div>
